@@ -15,6 +15,7 @@ def lambda_handler(event, context):
         html = f"<h1>The saved string is {new_value}</h1>"
         s3.put_object(
             Bucket = bucket_name,
+            #ToDo: move filename to an env variable
             Key = 'index.html',
             Body = html,
             ContentType = 'text/html'
